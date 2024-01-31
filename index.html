@@ -37,6 +37,29 @@
     const graphicsLayer = new GraphicsLayer();  
       map.add(graphicsLayer);
 
+    const point = { //Create a point  
+      type: "point",  
+      longitude: -91.048801,    
+      latitude: 46.883740
+    };
+
+    const simpleMarkerSymbol = {  
+    type: "simple-marker",  
+    color: [255, 255, 255, 0.25], 
+    style: "circle",
+    outline: {  
+      color: [255, 255, 255], // White  
+      width: 1
+
+  }   
+};
+    const pointGraphic = new Graphic({  
+      geometry: point,  
+      symbol: simpleMarkerSymbol  
+    });
+
+    graphicsLayer.add(pointGraphic);
+
     view.when(function() {
       const basemapGallery = new BasemapGallery({
         view: view
