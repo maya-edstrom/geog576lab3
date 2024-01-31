@@ -17,8 +17,9 @@
     "esri/widgets/BasemapGallery",
     "esri/widgets/Locate",
     "esri/Graphic",
-    "esri/widgets/Search"
-  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Graphic, Search) {
+    "esri/widgets/Search",
+    "esri/layers/GraphicsLayer"
+  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Graphic, Search, GraphicsLayer) {
     
     esriConfig.apiKey = "AAPK743426981581429cbb54c9d76b5e87221m_dimGOxaAXI1f9OThJm_cZ7jflHev4YxhlGpTn_Z-66wMY84jVXbPumN_6af-H";
 
@@ -32,6 +33,9 @@
       zoom: 13, // Zoom level
       container: "viewDiv" // Div element
     });
+
+    const graphicsLayer = new GraphicsLayer();  
+      map.add(graphicsLayer);
 
     view.when(function() {
       const basemapGallery = new BasemapGallery({
