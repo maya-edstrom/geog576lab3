@@ -18,8 +18,9 @@
     "esri/widgets/Locate",
     "esri/Graphic",
     "esri/widgets/Search",
-    "esri/layers/GraphicsLayer"
-  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Graphic, Search, GraphicsLayer) {
+    "esri/layers/GraphicsLayer",
+    "esri/layers/FeatureLayer",
+  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Graphic, Search, GraphicsLayer, FeatureLayer) {
     
     esriConfig.apiKey = "AAPK743426981581429cbb54c9d76b5e87221m_dimGOxaAXI1f9OThJm_cZ7jflHev4YxhlGpTn_Z-66wMY84jVXbPumN_6af-H";
 
@@ -76,6 +77,11 @@ const popupTemplate = {
 });
 
 graphicsLayer.add(pointGraphic);
+
+const countyForests = new FeatureLayer({
+url: "https://services5.arcgis.com/Ul9AyFFeFTjf08DW/arcgis/rest/services/County_Forests/FeatureServer"
+});
+map.add(countyForests);
 
     view.when(function() {
       const basemapGallery = new BasemapGallery({
