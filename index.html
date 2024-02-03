@@ -78,10 +78,10 @@ const popupTemplate = {
 
 graphicsLayer.add(pointGraphic);
 
-const hydroPolygons = new FeatureLayer({
-url: "https://dnrmaps.wi.gov/arcgis2/rest/services/TS_AGOL_STAGING_SERVICES/EN_AGOL_STAGING_SurfaceWater_WTM/MapServer/0"
+const hikingTrailheads = new FeatureLayer({
+url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/WCG_Hiking_Trailheads/FeatureServer"
 });
-map.add(hydroPolygons);
+map.add(hikingTrailheads);
 
     view.when(function() {
       const basemapGallery = new BasemapGallery({
