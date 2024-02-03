@@ -78,10 +78,10 @@ const popupTemplate = {
 
 graphicsLayer.add(pointGraphic);
 
-const lakeSuperiorBathymetry = new FeatureLayer({
-url: "https://services7.arcgis.com/Tk0IbKIKhaoYn5sa/arcgis/rest/services/LakeSuperiorBathymetry/FeatureServer"
+const hydroPolygons = new FeatureLayer({
+url: "https://dnrmaps.wi.gov/arcgis2/rest/services/TS_AGOL_STAGING_SERVICES/EN_AGOL_STAGING_SurfaceWater_WTM/MapServer/0"
 });
-map.add(lakeSuperiorBathymetry);
+map.add(hydroPolygons);
 
     view.when(function() {
       const basemapGallery = new BasemapGallery({
