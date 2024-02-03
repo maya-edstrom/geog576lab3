@@ -78,10 +78,10 @@ const popupTemplate = {
 
 graphicsLayer.add(pointGraphic);
 
-const countyForests = new FeatureLayer({
-url: "https://services5.arcgis.com/Ul9AyFFeFTjf08DW/arcgis/rest/services/County_Forests/FeatureServer"
+const lakeSuperiorBathymetry = new FeatureLayer({
+url: "https://services7.arcgis.com/Tk0IbKIKhaoYn5sa/arcgis/rest/services/LakeSuperiorBathymetry/FeatureServer"
 });
-map.add(countyForests);
+map.add(lakeSuperiorBathymetry);
 
     view.when(function() {
       const basemapGallery = new BasemapGallery({
