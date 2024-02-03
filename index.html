@@ -62,16 +62,20 @@ const popupTemplate = {
     Name: "Meyer's Beach",
     Description: "A popular beach on the Apostle Islands National Lakeshore, especially as a departure point for kayaking and hiking excursions."
  }
-    const pointGraphic = new Graphic({  
-      geometry: point,  
-      symbol: simpleMarkerSymbol,
-      
-      attributes: attributes,
-      popupTemplate: popupTemplate
+ const pointGraphic = new Graphic({
+  geometry: point,
+  symbol: simpleMarkerSymbol,
+  attributes: {
+    Name: "Meyer's Beach",
+    Description: "A popular beach on the Apostle Islands National Lakeshore, especially as a departure point for kayaking and hiking excursions."
+  },
+  popupTemplate: {
+    title: "{Name}",
+    content: "{Description}"
+  }
+});
 
-    });
-
-    graphicsLayer.add(pointGraphic);
+graphicsLayer.add(pointGraphic);
 
     view.when(function() {
       const basemapGallery = new BasemapGallery({
