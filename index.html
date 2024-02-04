@@ -78,10 +78,23 @@ const popupTemplate = {
 
 graphicsLayer.add(pointGraphic);
 
+const trailHeadsPopUp = {
+  "title": "Wisconsin Coastal Guide Trailheads",
+  "content": "<b>Name:</b> {Name}<br><b>Length:</b> {Length}<br><b>Parking:</b> {Parking}<br>"
+}
+
+
 const hikingTrailheads = new FeatureLayer({
 url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/WCG_Hiking_Trailheads/FeatureServer"
 });
+
 map.add(hikingTrailheads);
+
+outFields: ["Name","Length","Parking"],
+popupTemplate:trailHeadsPopUp
+ });
+
+ map.add(trailHeadsPopUp);
 
     view.when(function() {
       const basemapGallery = new BasemapGallery({
@@ -93,6 +106,7 @@ map.add(hikingTrailheads);
         position: "top-right"
       });
     });
+
 
     let locateWidget = new Locate({
       view: view,   // Attaches the Locate button to the view
