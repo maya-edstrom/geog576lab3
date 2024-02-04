@@ -89,6 +89,10 @@ popupTemplate: popupHiking
 
 map.add(hikingTrailheads);
 
+const airportLayer = new FeatureLayer({
+url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_Edstrom/FeatureServer",
+map.add(airportLayer)
+
     view.when(function() {
       const basemapGallery = new BasemapGallery({
         view: view
