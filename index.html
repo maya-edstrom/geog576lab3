@@ -20,7 +20,8 @@
     "esri/widgets/Search",
     "esri/layers/GraphicsLayer",
     "esri/layers/FeatureLayer",
-  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Graphic, Search, GraphicsLayer, FeatureLayer) {
+    "esri/PopupTemplate"
+  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Graphic, Search, GraphicsLayer, FeatureLayer, PopupTemplate) {
     
     esriConfig.apiKey = "AAPK743426981581429cbb54c9d76b5e87221m_dimGOxaAXI1f9OThJm_cZ7jflHev4YxhlGpTn_Z-66wMY84jVXbPumN_6af-H";
 
@@ -82,7 +83,6 @@ const trailHeadsPopUp = {
   "title": "Wisconsin Coastal Guide Trailheads",
   "content": "<b>Name:</b> {Name}<br><b>Length:</b> {Length}<br><b>Parking:</b> {Parking}<br>"
 }
-
 
 const hikingTrailheads = new FeatureLayer({
 url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/WCG_Hiking_Trailheads/FeatureServer"
