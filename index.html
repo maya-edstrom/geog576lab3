@@ -67,34 +67,27 @@ const popupTemplate = {
  const pointGraphic = new Graphic({
   geometry: point,
   symbol: simpleMarkerSymbol,
-  attributes: {
-    Name: "Meyer's Beach",
-    Description: "A popular beach on the Apostle Islands National Lakeshore, especially as a departure point for kayaking and hiking excursions."
-  },
-  popupTemplate: {
-    title: "{Name}",
-    content: "{Description}"
-  }
+
+  attributes: attributes,
+  popupTemplate: popupTemplate
 });
 
 graphicsLayer.add(pointGraphic);
 
-const hikingTrailheadsPopUp = {
+const popupHiking = {
   "title": "Wisconsin Coastal Guide Trailheads",
   "content": "<b>Name:</b> {Name}<br><b>Length:</b> {LengthMi}<br><b>Parking:</b> {Parking}<br>"
 }
 
 const hikingTrailheads = new FeatureLayer({
-url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/WCG_Hiking_Trailheads/FeatureServer"
+url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/WCG_Hiking_Trailheads/FeatureServer",
+
+outFields: ["Name","LengthMi","Parking"],
+popupTemplate: popupHiking
+
 });
 
 map.add(hikingTrailheads);
-
-outFields: ["Name","LengthMi","Parking"],
-popupTemplate: hikingTrailheadsPopUp
- });
-
- map.add(hikingTrailheadsPopUp);
 
     view.when(function() {
       const basemapGallery = new BasemapGallery({
