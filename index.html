@@ -79,9 +79,9 @@ const popupTemplate = {
 
 graphicsLayer.add(pointGraphic);
 
-const trailHeadsPopUp = {
+const hikingTrailheadsPopUp = {
   "title": "Wisconsin Coastal Guide Trailheads",
-  "content": "<b>Name:</b> {Name}<br><b>Length:</b> {Length}<br><b>Parking:</b> {Parking}<br>"
+  "content": "<b>Name:</b> {Name}<br><b>Length:</b> {LengthMi}<br><b>Parking:</b> {Parking}<br>"
 }
 
 const hikingTrailheads = new FeatureLayer({
@@ -90,11 +90,11 @@ url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/WCG_Hiki
 
 map.add(hikingTrailheads);
 
-outFields: ["Name","Length","Parking"],
-popupTemplate:trailHeadsPopUp
+outFields: ["Name","LengthMi","Parking"],
+popupTemplate:hikingTrailheadsPopUp
  });
 
- map.add(trailHeadsPopUp);
+ map.add(hikingTrailheadsPopUp);
 
     view.when(function() {
       const basemapGallery = new BasemapGallery({
