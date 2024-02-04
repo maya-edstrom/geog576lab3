@@ -85,13 +85,13 @@ const hikingTrailheadsPopUp = {
 }
 
 const hikingTrailheads = new FeatureLayer({
-url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/WCG_Hiking_Trailheads/FeatureServer",
-outFields: ["Name","LengthMi","Parking"],
-popupTemplate: hikingTrailheadsPopUp
+url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/WCG_Hiking_Trailheads/FeatureServer"
 });
 
 map.add(hikingTrailheads);
 
+outFields: ["Name","LengthMi","Parking"],
+popupTemplate: hikingTrailheadsPopUp
  });
 
  map.add(hikingTrailheadsPopUp);
@@ -129,7 +129,7 @@ map.add(hikingTrailheads);
       index: 2
     });
     
-  
+  });  
  </script>
 
 <style>  
