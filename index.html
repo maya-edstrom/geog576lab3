@@ -89,8 +89,19 @@ popupTemplate: popupHiking
 
 map.add(hikingTrailheads);
 
+const airportRenderer = {
+        "type": "simple",
+        "symbol": {
+          "type": "picture-marker",
+          "url": "https://github.com/maya-edstrom/geog576lab2/blob/main/outline_local_airport_black_24dp.png",
+          "width": "18px",
+          "height": "18px"
+        }
+      }
+
 const airportLayer = new FeatureLayer({
 url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_Edstrom/FeatureServer",
+renderer: airportRenderer
 
 });
 
