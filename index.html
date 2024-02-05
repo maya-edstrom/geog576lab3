@@ -163,7 +163,7 @@ const helipadLabels = {
 const helipadLayer = new FeatureLayer({
 url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_Edstrom/FeatureServer",
 renderer: helipadRenderer,  //calling the icon
-definitionExpression: "Fac_Type = 'HELIPAD'", //adding sql to filter for airports
+definitionExpression: "Fac_Type = 'HELIPORT'", //adding sql to filter for airports
 labelingInfo: [helipadLabels] //adding the labels
 });
 
