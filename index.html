@@ -119,6 +119,14 @@ const airportLabels = {
   }
 };
 
+
+const airportLayer = new FeatureLayer({
+url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_Edstrom/FeatureServer",
+renderer: airportRenderer,  //calling the icon
+definitionExpression: "Fac_Type = 'AIRPORT'", //adding sql to filter for airports
+labelingInfo: [airportLabels] //adding the labels
+});
+
 const helipadRenderer = {
         "type": "simple",
         "symbol": {
@@ -149,13 +157,6 @@ const helipadLabels = {
   }
 };
 
-
-const airportLayer = new FeatureLayer({
-url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_Edstrom/FeatureServer",
-renderer: airportRenderer,  //calling the icon
-definitionExpression: "Fac_Type = 'AIRPORT'", //adding sql to filter for airports
-labelingInfo: [airportLabels] //adding the labels
-});
 
 
 const helipadLayer = new FeatureLayer({
