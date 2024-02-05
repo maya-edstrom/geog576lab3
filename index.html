@@ -129,7 +129,7 @@ labelingInfo: [airportLabels] //adding the labels
 
 map.add(airportLayer);
 
-const helipadRenderer = {
+const heliportRenderer = {
         "type": "simple",
         "symbol": {
           "type": "picture-marker",
@@ -140,7 +140,7 @@ const helipadRenderer = {
       }
 
 //const to make the airport labels
-const helipadLabels = {
+const heliportLabels = {
   symbol: {
     type: "text",
     color: "#FFFFFF",
@@ -159,15 +159,14 @@ const helipadLabels = {
   }
 };
 
-
-const helipadLayer = new FeatureLayer({
+const heliportLayer = new FeatureLayer({
 url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_Edstrom/FeatureServer",
-renderer: helipadRenderer,  //calling the icon
+renderer: heliportRenderer,  //calling the icon
 definitionExpression: "Fac_Type = 'HELIPORT'", //adding sql to filter for airports
-labelingInfo: [helipadLabels] //adding the labels
+labelingInfo: [heliportLabels] //adding the labels
 });
 
-map.add(helipadLayer);
+map.add(heliportLayer);
 
 
     view.when(function() {
