@@ -263,10 +263,7 @@ const editor = new Editor({
  layerInfos: [pointInfos]
  }); // End Editor constructor
 
-// Add the widget to the view
-view.ui.add(editor, "top-right");
-
-const legend = new Legend({
+ const legend = new Legend({
   view: view,
   layerInfos: [
     {
@@ -276,6 +273,11 @@ const legend = new Legend({
   ]
 
 });
+
+// Add the widgets to the view
+view.ui.add(editor, "top-right");
+
+view.ui.add(legend, "bottom-right");
 
   });  
  </script>
