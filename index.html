@@ -21,9 +21,10 @@
     "esri/layers/GraphicsLayer",
     "esri/layers/FeatureLayer",
     "esri/PopupTemplate",
-    "esri/widgets/Editor"
+    "esri/widgets/Editor",
+    "esri/widgets/Legend"
     
-  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Graphic, Search, GraphicsLayer, FeatureLayer, PopupTemplate, Editor) {
+  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Graphic, Search, GraphicsLayer, FeatureLayer, PopupTemplate, Editor, Legend) {
     
     esriConfig.apiKey = "AAPK743426981581429cbb54c9d76b5e87221m_dimGOxaAXI1f9OThJm_cZ7jflHev4YxhlGpTn_Z-66wMY84jVXbPumN_6af-H";
 
@@ -265,6 +266,9 @@ const editor = new Editor({
 // Add the widget to the view
 view.ui.add(editor, "top-right");
 
+let legend = new Legend({
+  view: view
+});
 
   });  
  </script>
