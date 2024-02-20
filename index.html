@@ -239,7 +239,9 @@ map.add(myAirports);
       })
     });
 
-    view.ui.add(locateWidget, "top-right");
+    view.ui.add(locateWidget, "bottom-left");  //moving it to get out of the way
+
+    // Create the search widget
 
     const searchWidget = new Search({
       view: view
