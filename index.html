@@ -220,15 +220,22 @@ map.add(myAirports);
   
 
 
-    view.when(function() {
-      const basemapGallery = new BasemapGallery({
-        view: view
-      });
+view.when(function() {
+  const basemapGallery = new BasemapGallery({
+    view: view
+  });
 
-      // Add the widget to the top-right corner of the view
-      view.ui.add(basemapGallery, {
-        position: "top-right"
-      });
+// Create an Expand widget instance, passing in the BasemapGallery widget
+const basemapExpand = new Expand({
+  view: view,
+  content: basemapGallery,
+  expanded: false // Start in a collapsed state
+});
+
+// Add the Expand widget to the top-right corner of the view
+view.ui.add(basemapExpand, "top-left");
+
+  
     });
 
 
