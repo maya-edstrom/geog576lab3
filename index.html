@@ -25,7 +25,8 @@
     "esri/widgets/Legend",
     "esri/widgets/Expand"
     
-  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Graphic, Search, GraphicsLayer, FeatureLayer, PopupTemplate, Editor, Legend, Expand) {
+  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Graphic, 
+  Search, GraphicsLayer, FeatureLayer, PopupTemplate, Editor, Legend, Expand) {
     
     esriConfig.apiKey = "AAPK743426981581429cbb54c9d76b5e87221m_dimGOxaAXI1f9OThJm_cZ7jflHev4YxhlGpTn_Z-66wMY84jVXbPumN_6af-H";
 
@@ -247,7 +248,7 @@ view.ui.add(basemapExpand, "top-left");
       })
     });
 
-    view.ui.add(locateWidget, "bottom-left");  //moving it to get out of the way
+    view.ui.add(locateWidget, "top-left");  //moving it to get out of the way
 
     // Create the search widget
 
@@ -255,12 +256,22 @@ view.ui.add(basemapExpand, "top-left");
       view: view
     });
 
-    // Adds the search widget below other elements in
-    // the top left corner of the view
-    view.ui.add(searchWidget, {
-      position: "top-left",
-      index: 2
-    });
+    // Create an Expand widget instance, passing in the Search widget
+const searchExpand = new Expand({
+  view: view,
+  content: searchWidget,
+  expanded: false // Start in a collapsed state
+});
+
+// Add the Expand widget to the top-right corner of the view
+view.ui.add(searchExpand, "top-left");
+
+    // // Adds the search widget below other elements in
+    // // the top left corner of the view
+    // view.ui.add(searchWidget, {
+    //   position: "top-left",
+    //   index: 2
+    // });
 
     // Set the point layer's LayerInfo
 const pointInfos = {
